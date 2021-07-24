@@ -1,5 +1,4 @@
 // Student Management system using file handling in c++
-// Sagar Developer
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
