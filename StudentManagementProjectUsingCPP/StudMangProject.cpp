@@ -8,10 +8,11 @@
 #include <regex>
 #include <stdio.h>
 using namespace std;
+
 class student
 {
 private:
-    string name, roll_no, course, address, email_id, contact_no;
+    string  name, roll_no, course, address, email_id, contact_no;
 
 public:
     void menu();
@@ -69,7 +70,7 @@ menustart:
     case 6:
         exit(0);
     default:
-        cout << "\n\t\t\t Invalid choice... Please Try Again..";
+        cout << "\n\t\t\t Invalid choice... Please Try Again.. Press any key to continue";
     }
     getch();
     goto menustart;
@@ -81,18 +82,19 @@ void student::insert() // add student details
     cout << "\n-----------------------------------------------------------------------------------------------------";
     cout << "\n------------------------------------- Add Student Details ---------------------------------------------" << endl;
     
+    cin.ignore();
     cout << "\t\t\tEnter Name: ";
-    cin >> name;
+    cin>>name;
     cout << "\t\t\tEnter Roll No.: ";
-    cin >> roll_no;
+    cin>>roll_no;
     cout << "\t\t\tEnter Course: ";
-    cin >> course;
+    cin>>course;
     cout << "\t\t\tEnter Email Id: ";
-    cin >> email_id;
+    cin>>email_id;
     cout << "\t\t\tEnter Contact No: ";
-    cin >> contact_no;
+    cin>>contact_no;
     cout << "\t\t\tEnter Address: ";
-    cin >> address;
+    cin>>address;
     file.open("studentRecord.txt", ios::app | ios::out);
     file << " " << name << " " << roll_no << " " << course << " " << email_id << " " << contact_no << " " << address << "\n";
     file.close();
@@ -274,5 +276,4 @@ main()
     student project;
     project.menu();
     return 0;
-}          
-        
+}
